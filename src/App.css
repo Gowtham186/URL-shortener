@@ -1,0 +1,13 @@
+.App {
+  text-align: center;
+}
+ul{
+  list-style: none;
+}
+li{
+  display: inline;
+  margin-right: 20px;
+}
+.urls{
+  border: 1px solid black;
+}
