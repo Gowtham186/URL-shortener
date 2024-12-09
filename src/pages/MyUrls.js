@@ -105,7 +105,7 @@ export default function MyUrls(){
                             <div className="urls" key={ele._id}>
                                 <h2>{ele._id}</h2>
                                 <h3>{ele.longUrl}</h3>
-                                <h3><a href={`http://localhost:3000/${ele.shortUrl}`} target="_blank" rel="noopener noreferrer">{ele.shortUrl}</a></h3>
+                                <h3><a href={`http://localhost:3300/${ele.shortUrl}`} target="_blank" rel="noopener noreferrer">{ele.shortUrl}</a></h3>
                                 <p>created at - {ele.createdAt}</p>
                                 <p>expire at - {ele.expireDate}</p>
                                 <button onClick={()=>handleEdit(ele)}>Edit</button>
@@ -135,12 +135,7 @@ export default function MyUrls(){
                             onChange={(e) => setEditForm({ ...editForm, shortUrl: e.target.value })}
                         />
                         
-                        {/* <DatePicker
-                            selected={editForm.expireDate}
-                            placeholderText="Select a date"
-                            minDate={new Date()}
-                            onChange={(date) => setEditForm({ ...editForm, expireDate: date })}
-                        /> */}
+                        
                         
                         <input type="submit" value="Save" />
                     </form>

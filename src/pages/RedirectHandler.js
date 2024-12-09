@@ -3,31 +3,30 @@ import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 
 export default function RedirectHandler() {
-    const { shortUrl } = useParams(); // Get shortUrl from URL parameters
+    const { shortUrl } = useParams(); 
     const navigate = useNavigate();
 
     useEffect(() => {
         (async () => {
             try {
-                // Make the backend request to get the longUrl
                 const response = await axios.get(`http://localhost:3300/${shortUrl}`);
                 
-                // Extract the longUrl from the response
-                const longUrl = response.data.longUrl; // Ensure the backend response contains 'longUrl'
+                
+                const longUrl = response.data.longUrl; 
 
                 if (longUrl) {
                     console.log('Redirecting to:', longUrl);
-                    window.location.href = longUrl; // Perform the redirection
+                    window.location.href = longUrl; 
                 } else {
                     console.error('No long URL found in response');
-                    navigate('/error'); // Redirect to an error page if no URL is found
+                    navigate('/error'); 
                 }
             } catch (error) {
                 console.error('Error fetching long URL:', error);
-                navigate('/error'); // Navigate to an error page if an error occurs
+                navigate('/error'); 
             }
         })();
     }, [shortUrl, navigate]);
 
-    return <p>Redirecting...</p>; // Inform the user of the redirect
+    return <p>Redirecting...</p>; 
 }
