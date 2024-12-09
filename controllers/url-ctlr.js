@@ -200,7 +200,8 @@ urlCtlr.delete = async(req,res)=>{
                 await newAnalytics.save();
             }
     
-            res.json({ longUrl: urlData.longUrl });
+            //res.json({ longUrl: urlData.longUrl });
+            res.redirect(urlDate.longUrl)
         } catch (err) {
             console.error('Error while handling URL redirection:', err.message);
             res.status(500).json({ errors: 'Something went wrong' });
