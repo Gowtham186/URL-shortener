@@ -201,7 +201,7 @@ urlCtlr.delete = async(req,res)=>{
             }
     
             //res.json({ longUrl: urlData.longUrl });
-            res.redirect(urlDate.longUrl)
+            res.redirect(urlData.longUrl)
         } catch (err) {
             console.error('Error while handling URL redirection:', err.message);
             res.status(500).json({ errors: 'Something went wrong' });
